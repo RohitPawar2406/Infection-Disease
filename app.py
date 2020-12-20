@@ -71,7 +71,7 @@ def upload():
             basepath, 'uploads', secure_filename(f.filename))
         f.save(file_path)
         food_list = ['anthracnose','black_spot','phytophthora','powdery_mildew','ring_spot']
-        
+        model_best = load_model('papaya.hdf5',compile = False)
         images = []
         images.append(file_path)
         # Make prediction
