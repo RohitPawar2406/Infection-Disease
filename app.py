@@ -31,6 +31,7 @@ app = Flask(__name__)
 #from keras.applications.resnet50 import ResNet50
 #model = ResNet50(weights='imagenet')
 #model.save('')
+#model_best = load_model('papaya.hdf5',compile = False)
 
 print('Model loaded. Check http://127.0.0.1:5000/')
 
@@ -70,7 +71,7 @@ def upload():
             basepath, 'uploads', secure_filename(f.filename))
         f.save(file_path)
         food_list = ['anthracnose','black_spot','phytophthora','powdery_mildew','ring_spot']
-        model_best = load_model('papaya.hdf5',compile = False)
+        
         images = []
         images.append(file_path)
         # Make prediction
